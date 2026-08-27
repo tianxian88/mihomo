@@ -45,7 +45,9 @@ jobs:
       run: |
         mkdir -p ./bin/meta/
         rm -fr ./bin/meta/*
-        cp ./tmp/* ./bin/meta/
+        if [ -d "./tmp" ] && [ "$(ls -A ./tmp 2>/dev/null)" ]; then
+          cp ./tmp/* ./bin/meta/
+        fi
         rm -fr ./tmp
         sed -i "s/meta_v=.*/meta_v=$(./bin/meta/clash-linux-amd64 -v 2>/dev/null | head -n 1 | sed 's/ linux.*//;s/.* //')/" bin/version
     - name: Commit and push
