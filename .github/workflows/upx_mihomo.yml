@@ -43,7 +43,7 @@ jobs:
         rm -fr upx*
     - name: Update
       run: |
-        mkdir ./bin/meta/
+        mkdir -p ./bin/meta/
         rm -fr ./bin/meta/*
         cp ./tmp/* ./bin/meta/
         rm -fr ./tmp
