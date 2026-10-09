@@ -8,7 +8,7 @@ env:
   download_url: https://github.com/MetaCubeX/mihomo/releases/download
 jobs:
   Update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
     - name: Clone Repository
       uses: actions/checkout@main
